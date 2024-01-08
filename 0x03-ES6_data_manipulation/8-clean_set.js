@@ -1,7 +1,8 @@
 export default function cleanSet(set, startString) {
+  if (!startString) return '';
   const stringsArr = [];
   set.forEach((word) => {
-    if (startString && word.startsWith(startString) && word.length > startString.length) {
+    if (word.startsWith(startString)) {
       stringsArr.push(word.substr(startString.length, word.length));
     }
   });
