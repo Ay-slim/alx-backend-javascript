@@ -50,3 +50,12 @@ export function createEmployee(salary: number | string): DirectorInterface | Tea
 console.log(createEmployee(200).toString());
 console.log(createEmployee(1000).toString());
 console.log(createEmployee('$500').toString());
+
+type Subjects = 'Math' | 'History';
+
+const teachClass = (todayClass: Subjects) => {
+  return `Teaching ${todayClass}`;
+}
+
+console.log(teachClass('Math'));
+console.log(teachClass('History'));
