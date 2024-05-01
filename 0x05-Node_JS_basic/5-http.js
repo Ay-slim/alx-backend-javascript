@@ -7,7 +7,7 @@ function countStudents(path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, { encoding: 'utf8' }, (err, data) => {
       if (err) {
-        reject(new Error('Cannot load the database'));
+        reject(new Error('This is the list of our students\nCannot load the database'));
       } else {
         const arrOfStudents = data.split('\n');
         const arrLength = arrOfStudents.length;
@@ -47,7 +47,7 @@ const app = http.createServer(async (req, res) => {
         res.write(strAug);
       });
     } catch (err) {
-      res.write('Cannot load the database');
+      res.write(err.message);
     }
     res.end();
   }
