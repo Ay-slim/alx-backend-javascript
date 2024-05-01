@@ -16,9 +16,9 @@ class StudentsController {
         }
         return lineUpgrade;
       }).join('');
-      response.status(200).send(sortedStudents);
+      response.status(200).send(`This is the list of our students\n${sortedStudents}`);
     }).catch(() => {
-      response.status(500).send('Cannot load the database');
+      response.status(500).send('This is the list of our students\nCannot load the database');
     });
   }
 
